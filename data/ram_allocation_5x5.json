@@ -1,0 +1,31 @@
+{
+  "name": "5x5 RAM allocation",
+  "capacity_gb": 15,
+  "workloads": [
+    {
+      "name": "web",
+      "minimum_ram_gb": 2,
+      "incremental_utilities": [11, 8, 5, 3, 1]
+    },
+    {
+      "name": "database",
+      "minimum_ram_gb": 3,
+      "incremental_utilities": [14, 11, 8, 5, 2]
+    },
+    {
+      "name": "analytics",
+      "minimum_ram_gb": 2,
+      "incremental_utilities": [12, 9, 6, 4, 1]
+    },
+    {
+      "name": "cache",
+      "minimum_ram_gb": 1,
+      "incremental_utilities": [10, 7, 5, 3, 1]
+    },
+    {
+      "name": "batch",
+      "minimum_ram_gb": 2,
+      "incremental_utilities": [9, 6, 4, 2, 1]
+    }
+  ]
+}

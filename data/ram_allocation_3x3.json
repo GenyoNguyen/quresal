@@ -1,0 +1,21 @@
+{
+  "name": "3x3 RAM allocation",
+  "capacity_gb": 11,
+  "workloads": [
+    {
+      "name": "web",
+      "minimum_ram_gb": 2,
+      "incremental_utilities": [10, 7, 4]
+    },
+    {
+      "name": "database",
+      "minimum_ram_gb": 3,
+      "incremental_utilities": [12, 9, 6]
+    },
+    {
+      "name": "cache",
+      "minimum_ram_gb": 1,
+      "incremental_utilities": [8, 5, 2]
+    }
+  ]
+}

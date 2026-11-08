@@ -1,0 +1,63 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+
+[project]
+name = "quresal"
+version = "0.1.0"
+description = "Quantum resource allocation"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+
+dependencies = [
+    # Qiskit core and optimization modeling
+    "qiskit>=2.4,<2.5",
+    "qiskit-addon-opt-mapper==0.1.0",
+
+    # Quantum simulation and algorithms
+    "qiskit-aer>=0.18.2,<0.19",
+    "qiskit-algorithms>=0.4,<0.5",
+
+    # Mathematical modeling and optimization
+    "numpy>=2.0,<3.0",
+    "scipy>=1.14,<2.0",
+    "sympy>=1.13,<2.0",
+
+    # Data analysis and visualization
+    "pandas>=2.2,<4.0",
+    "matplotlib>=3.9,<4.0",
+]
+
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.11",
+    "mypy>=1.15",
+    "jupyterlab>=4.0",
+]
+
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/quresal"]
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+pythonpath = ["src"]
+
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
